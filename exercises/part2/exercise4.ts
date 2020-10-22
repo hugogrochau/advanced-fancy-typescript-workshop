@@ -1,5 +1,6 @@
 {
-  // Write the type for assign with 2, 3, 4, 5 arguments
+  function assign<A, B, C, D, E>(obj1: A, obj2: B, obj3?: C, obj4?: D, obj5?: E): A & B & C & D & E
+  function assign(obj1: any, obj2: any, ...objects: any[]): any 
   function assign(...objects: any[]): any {
     throw "Not implemented" // ignore this line
   }
