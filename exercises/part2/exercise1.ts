@@ -7,22 +7,22 @@
    * 
    * Note: in this exercise it might be needed to slightly change implementation
    */
-  class MyCollection {
-    private data: any[]
+  class MyCollection<T> {
+    private data: T[] = []
 
-    constructor(initial: any) {
+    constructor(initial?: ArrayLike<T> | Iterable<T>) {
       if (initial) this.data = Array.from(initial);
     }
 
-    get(index: number): unknown {
+    get(index: number): T {
       return this.data[index];
     }
 
-    add(value) {
+    add(value: T) {
       this.data.push(value);
     }
 
-    forEach(callback) {
+    forEach(callback: (arg0: T, index: number) => void) {
       for (let i = 0; i < this.data.length; i++) {
         callback(this.data[i], i);
       }
